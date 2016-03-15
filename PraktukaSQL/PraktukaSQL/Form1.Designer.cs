@@ -71,6 +71,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentsTableAdapter = new PraktukaSQL.DataSet1TableAdapters.StudentsTableAdapter();
             this.tableAdapterManager = new PraktukaSQL.DataSet1TableAdapters.TableAdapterManager();
+            this.button1 = new System.Windows.Forms.Button();
             iDstudentLabel = new System.Windows.Forms.Label();
             firstnameLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
@@ -424,11 +425,22 @@
             this.tableAdapterManager.TutorialTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = PraktukaSQL.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(472, 58);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 36);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Курси, які ведуть викладачі";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 397);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.fillBy1ToolStrip);
             this.Controls.Add(iDnumberLabel);
             this.Controls.Add(this.iDnumberTextBox);
@@ -495,6 +507,7 @@
         private System.Windows.Forms.ToolStripLabel firstnameToolStripLabel;
         private System.Windows.Forms.ToolStripTextBox firstnameToolStripTextBox;
         private System.Windows.Forms.ToolStripButton fillBy1ToolStripButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 

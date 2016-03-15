@@ -73,5 +73,12 @@ namespace PraktukaSQL
             }
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form rt = new Form3();
+            rt.ShowDialog();
+
+        }
     }
 }

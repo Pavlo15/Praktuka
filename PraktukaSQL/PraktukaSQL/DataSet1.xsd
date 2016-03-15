@@ -203,6 +203,28 @@ WHERE        (IDstudent LIKE :IDstudent) OR
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Lectors.IDlectors, Lectors.Firstname, Lectors.Name, Tutorial.IDkyrsu, Tutorial.Namekurs
+FROM            Lectors INNER JOIN
+                         Tutorial ON Lectors.IDlectors = Tutorial.IDlectors</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IDlectors" DataSetColumn="IDlectors" />
+              <Mapping SourceColumn="Firstname" DataSetColumn="Firstname" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="IDkyrsu" DataSetColumn="IDkyrsu" />
+              <Mapping SourceColumn="Namekurs" DataSetColumn="Namekurs" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -242,6 +264,17 @@ WHERE        (IDstudent LIKE :IDstudent) OR
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDlectors" msprop:Generator_ColumnVarNameInTable="columnIDlectors" msprop:Generator_ColumnPropNameInRow="IDlectors" msprop:Generator_ColumnPropNameInTable="IDlectorsColumn" msprop:Generator_UserColumnName="IDlectors" type="xs:string" />
+              <xs:element name="Firstname" msprop:Generator_ColumnVarNameInTable="columnFirstname" msprop:Generator_ColumnPropNameInRow="Firstname" msprop:Generator_ColumnPropNameInTable="FirstnameColumn" msprop:Generator_UserColumnName="Firstname" type="xs:string" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
+              <xs:element name="IDkyrsu" msprop:Generator_ColumnVarNameInTable="columnIDkyrsu" msprop:Generator_ColumnPropNameInRow="IDkyrsu" msprop:Generator_ColumnPropNameInTable="IDkyrsuColumn" msprop:Generator_UserColumnName="IDkyrsu" type="xs:string" />
+              <xs:element name="Namekurs" msprop:Generator_ColumnVarNameInTable="columnNamekurs" msprop:Generator_ColumnPropNameInRow="Namekurs" msprop:Generator_ColumnPropNameInTable="NamekursColumn" msprop:Generator_UserColumnName="Namekurs" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -256,5 +289,16 @@ WHERE        (IDstudent LIKE :IDstudent) OR
       <xs:selector xpath=".//mstns:Tutorial" />
       <xs:field xpath="mstns:IDkyrsu" />
     </xs:unique>
+    <xs:unique name="DataTable1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:IDlectors" />
+      <xs:field xpath="mstns:IDkyrsu" />
+    </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Tutorial_Students" msdata:parent="Tutorial" msdata:child="Students" msdata:parentkey="IDstudent" msdata:childkey="IDstudent" msprop:Generator_UserChildTable="Students" msprop:Generator_ChildPropName="GetStudentsRows" msprop:Generator_UserRelationName="Tutorial_Students" msprop:Generator_RelationVarName="relationTutorial_Students" msprop:Generator_UserParentTable="Tutorial" msprop:Generator_ParentPropName="TutorialRow" />
+      <msdata:Relationship name="Tutorial_Lectors" msdata:parent="Tutorial" msdata:child="Lectors" msdata:parentkey="IDlectors" msdata:childkey="IDlectors" msprop:Generator_UserChildTable="Lectors" msprop:Generator_ChildPropName="GetLectorsRows" msprop:Generator_UserRelationName="Tutorial_Lectors" msprop:Generator_RelationVarName="relationTutorial_Lectors" msprop:Generator_UserParentTable="Tutorial" msprop:Generator_ParentPropName="TutorialRow" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>
